@@ -1,14 +1,19 @@
 .container{
+    height: 100vh;
     background-image: url("../img/bg.jpg");
     background-size: cover;
     background-position: center;
     font-family: 'Jost', sans-serif;
     color: white;
-    padding: 5vh 10vh 15vh 10vh;
+    padding: 0 30vh 0 30vh;
 }
 
 .content{
     margin-top: 30px;
+}
+
+.content-h {
+    padding-top: 10vh;
 }
 
 #logo{
@@ -16,28 +21,31 @@
 }
 
 h3{
-    font-size: 2em;
+    font-size: 6em;
     margin-bottom: 15px;
+    margin-top: 15vh;
 }
 
 h4{
-    font-size: 1em;
+    font-size: 2em;
     font-weight: bold;
     color: rgb(180, 0, 180);
 }
 
 p, ul{
-    font-size: 0.5em;
+    font-size: 1.5em;
 }
 
 p{
     margin: 5px 0;
+    margin-top: 15px;
 }
 
 ul{
-    margin: 20px 0;
+    margin: 50px 0;
     list-style-type: disc;
     list-style-position: inside;
+    line-height: 1.5;
 }
 
 span{
@@ -45,16 +53,28 @@ span{
 }
 
 .content-f span{
-    font-size: 0.4em;
+    font-size: 1em;
 }
 
 .content-f button{
     border-radius: 0;
-    padding: 5px 15px;
-    font-size: 0.6em;
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 1.5em;
     font-weight: bold;
     background-color: #00FFFF;
     border: 0;
     color: #0b133d;
-    box-shadow:#00ffff 0px 22px 70px 4px;
+    box-shadow:#00ffff 22px 22px 70px 4px;
+}
+
+.content-f {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.check {
+    display: inline;
 }
