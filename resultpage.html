@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -27,7 +28,9 @@
                 <p id="c-percent"><span>66.7%</span></p>
                 <p id="c-number">4/6 question</p>
             </div>
-            <div id="chart">GRAFICO</div>
+            <div id="chart">
+                <canvas id="myChart"></canvas>
+            </div>
             <div id="wrong">
                 <p>Wrong</p>
                 <p id="w-percent"><span>33.3%</span></p>
@@ -40,5 +43,6 @@
 
     </div>
     
+    <script src="Assets/js/result-chart.js"></script>
 </body>
 </html>
