@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Assets/css/reset.css">
     <link rel="stylesheet" href="Assets/css/style.css">
+    <link rel="stylesheet" href="Assets/css/benchmark-page.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
@@ -21,6 +22,9 @@
         <div class="content" id="content">
         </div>
     </div>
+
+<!-- Template della welcome page-->
+
     <template id="welcome-page">
         <div class="content-text">
             <h3>Welcome to <span>your exam</span></h3>
@@ -40,6 +44,21 @@
                 </div>
                 <button id="proceed">PROCEED</button>
             </div>
+        </div>
+    </template>
+
+<!-- Template benchmarck page-->
+
+    <template id="bp-template">
+        <div class="bp-content-text">
+            <h3>How can I create a <span>chackbox in HTML?</span></h3>
+            <div class="answers">
+                <button class=>input tipe = "check"</button>
+                <button class=>input type = checkbox"</button>
+                <button class=>checkbox</button>
+                <button class=>input type = "button"</button>
+            </div>
+            <p id="question-number">QUESTION 1 <span class="pink">/10</span></p>
         </div>
     </template>
     <script src="Assets/js/script.js"></script>
