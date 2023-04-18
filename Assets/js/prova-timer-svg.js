@@ -1,5 +1,5 @@
-let circularProgress=document.querySelector(".circular-progress");
-let progValue=document.querySelector(".progress-value");
+let circularProgress=document.querySelector("circle");
+let progValue=document.querySelector("text");
 progValue.innerHTML=20;
 progBar=Number(progValue.innerHTML);
 let cont=0;
