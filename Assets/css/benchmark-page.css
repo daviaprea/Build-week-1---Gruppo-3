@@ -16,12 +16,13 @@ h3{
     margin-top: 20vh;
 }
 
-.content-f{
-    display: block;
-    align-items: center;
+.answers {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-items: center;
 }
 
-.content-f button{
+.answers button{
     margin: 20px;
     font-weight: 1.5em;
     border-radius: 40px;
@@ -37,7 +38,7 @@ h3{
     background: none;
 }
 
-.content-f button:hover{
+.answers button:hover{
     cursor: pointer;
     background-color: #c2128d;
 }
@@ -66,6 +67,10 @@ h3{
 
 .pink{
     color: #c2128d;
+}
+
+#question-number {
+    margin-top: 15vh;
 }
 
 
