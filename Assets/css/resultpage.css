@@ -1,0 +1,42 @@
+.main-content {
+    text-align: center;
+}
+
+.main-content div{
+    display: inline-block;
+    width: 20vw;
+    margin-top: 10vh;
+}
+
+.main-content h3 {
+    margin-top: 5vh;
+}
+
+.main-content p {
+    font-size: 2.8em;
+}
+
+#correct {
+    text-align: left;
+}
+
+#correct p {
+    font-size: 4em;
+}
+
+#correct #c-number {
+    font-size: 2.8em;
+}
+
+#wrong {
+    text-align: right;
+}
+
+#wrong p {
+    font-size: 4em;
+}
+
+#wrong #w-number {
+    font-size: 2.8em;
+}
+
