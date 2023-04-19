@@ -24,7 +24,7 @@ proceedBtn.addEventListener('click', () => {
 
             mainBox.appendChild(bpHTML);
             
-            let question = document.querySelector('#question');
+            let qstTitle = document.getElementById('question');
             let answers = document.getElementById('answers');
 
             let optionsArr = []; //CREO ARRAY CON ARRAY DI OPZIONI
@@ -44,53 +44,59 @@ proceedBtn.addEventListener('click', () => {
             {
                 btn[i]=document.createElement('button');
                 btn[i].addEventListener("click", ()=>{
+
                     answers.innerHTML="";
                     cont++;
+
                     if(domande[cont].type == 'boolean')
                     {
-                        answers.append(btn[0].innerHTML=optionsArr[cont][0]);
-                        answers.append(btn[1].innerHTML=optionsArr[cont][1]);
+                        for(let i=0; i<2; i++)
+                        {
+                            btn[i].innerHTML="";
+                            let textnode = document.createTextNode(optionsArr[cont][i]);
+                            btn[i].appendChild(textnode);
+                            answers.append(btn[i]);
+
+                            qstTitle.innerHTML=domande[cont].question;
+                        }
                     }
 
                     else
                     {
-                        answers.append(btn[0].innerHTML=optionsArr[cont][0]);
-                        answers.append(btn[1].innerHTML=optionsArr[cont][1]);
-                        answers.append(btn[2].innerHTML=optionsArr[cont][2]);
-                        answers.append(btn[3].innerHTML=optionsArr[cont][3]);
+                        for(let i=0; i<4; i++)
+                        {
+                            btn[i].innerHTML="";
+                            let textnode = document.createTextNode(optionsArr[cont][i]);
+                            btn[i].appendChild(textnode);
+                            answers.append(btn[i]);
+
+                            qstTitle.innerHTML=domande[cont].question;
+                        }
                     }
                 });
             }
-            console.log(btn);
 
             if(domande[0].type == 'boolean')
             {
-                let textnode = document.createTextNode(optionsArr[0][0]);
-                btn[0].appendChild(textnode);
-                answers.append(btn[0]);
+                for(let i=0; i<2; i++)
+                {
+                    let textnode = document.createTextNode(optionsArr[0][i]);
+                    btn[i].appendChild(textnode);
+                    answers.append(btn[i]);
 
-                let textnode2 = document.createTextNode(optionsArr[0][1]);
-                btn[1].appendChild(textnode2);
-                answers.append(btn[1]);
+                    qstTitle.innerHTML=domande[0].question;
+                }
             }
 
             else
             {
-                let textnode = document.createTextNode(optionsArr[0][0]);
-                btn[0].appendChild(textnode);
-                answers.append(btn[0]);
-
-                let textnode2 = document.createTextNode(optionsArr[0][1]);
-                btn[1].appendChild(textnode2);
-                answers.append(btn[1]);
-
-                let textnode3 = document.createTextNode(optionsArr[0][2]);
-                btn[2].appendChild(textnode3);
-                answers.append(btn[2]);
-
-                let textnode4 = document.createTextNode(optionsArr[0][3]);
-                btn[3].appendChild(textnode4);
-                answers.append(btn[3]);
+                for(let i=0; i<4; i++)
+                {
+                    let textnode = document.createTextNode(optionsArr[0][i]);
+                    btn[i].appendChild(textnode);
+                    answers.append(btn[i]);
+                    qstTitle.innerHTML=domande[0].question;
+                }
             }
         });
     }
