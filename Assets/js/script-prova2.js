@@ -26,6 +26,9 @@ proceedBtn.addEventListener('click', () => {
             
             let qstTitle = document.getElementById('question');
             let answers = document.getElementById('answers');
+            let qstCont=document.getElementById('q-number');
+
+            console.log(domande);
 
             let optionsArr = []; //CREO ARRAY CON ARRAY DI OPZIONI
             let i=0;
@@ -40,14 +43,20 @@ proceedBtn.addEventListener('click', () => {
 
             let btn = []; //CREO BOTTONI
             let cont=0;
+            let correct=0;
+            let wrong=0;
+
             for (let i = 0; i < 4; i++)
             {
                 btn[i]=document.createElement('button');
                 btn[i].addEventListener("click", ()=>{
 
+                    btn[i].innerHTML==domande[cont].correct_answer ? correct++ : wrong++;
+                    console.log(`Giuste: ${correct}; Sbagliate: ${wrong}`);
+
                     answers.innerHTML="";
                     cont++;
-
+                    qstCont.innerHTML=cont;
                     if(domande[cont].type == 'boolean')
                     {
                         for(let i=0; i<2; i++)
@@ -83,7 +92,6 @@ proceedBtn.addEventListener('click', () => {
                     let textnode = document.createTextNode(optionsArr[0][i]);
                     btn[i].appendChild(textnode);
                     answers.append(btn[i]);
-
                     qstTitle.innerHTML=domande[0].question;
                 }
             }
