@@ -52,6 +52,7 @@ h3{
     background: none;
     position: relative;
 }
+
 #timer:before{
     content: "";
     display: block;
