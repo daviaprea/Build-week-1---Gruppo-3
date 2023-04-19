@@ -43,12 +43,20 @@ proceedBtn.addEventListener('click', () => {
                 let text=`${d.correct_answer},${d.incorrect_answers.toString()}`;
                 let textArr=text.split(",");
                 optionsArr[cont]=[...textArr];
-                cont++;
 
                 if(d.type == 'boolean')
                 {
                     answers.append(btn[0].innerHTML=optionsArr[0]);
                     answers.append(btn[1].innerHTML=optionsArr[1]);
+                    
+                    btn.forEach(el => el.addEventListener("click", ()=>{
+                        answers.innerHTML="";
+                        cont++;
+                        clearTimeout(myTimeout);
+                    }));
+
+                    answers.innerHTML="";
+                    cont++;
                 }
 
                 else
@@ -57,6 +65,17 @@ proceedBtn.addEventListener('click', () => {
                     answers.append(btn[1].innerHTML=optionsArr[1]);
                     answers.append(btn[2].innerHTML=optionsArr[2]);
                     answers.append(btn[3].innerHTML=optionsArr[3]);
+                    
+                    btn.forEach(el => el.addEventListener("click", ()=>{
+                        answers.innerHTML="";
+                        cont++;
+                        clearTimeout(myTimeout);
+                    }));
+                    
+                    let myTimeout = setTimeout(()=>{
+                        answers.innerHTML="";
+                        cont++;
+                    }, 20000);
                 }
             }
             console.log(optionsArr);
