@@ -2,3 +2,17 @@ svg{
     width: 6rem;
     height: 6rem;
 }
+
+svg circle{
+    stroke: rgba(161, 161, 161, 0.5);
+    stroke-width: 8px;
+    stroke-dasharray: 251;
+    stroke-dashoffset: 251;
+    animation: anim 20s linear forwards;
+}
+
+@keyframes anim{
+    100%{
+        stroke-dashoffset: 0;
+    }
+}
