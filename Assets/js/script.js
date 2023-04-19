@@ -21,34 +21,49 @@ proceedBtn.addEventListener('click', () => {
         .then(res => res.json())
         .then(res => {            
             domande = res.results;
-            console.log(domande)
+
             mainBox.appendChild(bpHTML);
             
             let question = document.querySelector('#question');
             let answers = document.querySelector('.answers');
-            let optionsArr = [];
 
-            for(let q = 0 ; q < domande.length; q++){
-                optionsArr.push(domande[q].correct_answer);               
+            let btn = []; //CREO BOTTONI
+            for (let i = 0; i < 4; i++)
+            {
+                btn.push(document.createElement('button'));
+                btn[i].addEventListener("click", ()=>{
+                    answers.innerHTML="";
+                });
             }
 
-            console.log(optionsArr);
+            let optionsArr = []; //CREO ARRAY CON ARRAY DI OPZIONI
+            let cont=0;
+            for(d of domande) //GENERO L'ARRAY E PIAZZO I BOTTONI
+            {
+                let text=`${d.correct_answer},${d.incorrect_answers.toString()}`;
+                let textArr=text.split(",");
+                optionsArr[cont]=[...textArr];
+                cont++;
 
-
-            let btn = [];
-            for (let i = 0; i < 4; i++) btn.push(document.createElement('button'));
-
-            domande.forEach(el => {
-                if(el.type == 'boolean') {
-
-                    answers.appendChild(btn[0]);
-                    answers.appendChild(btn[1]);
+                if(d.type == 'boolean')
+                {
+                    answers.append(btn[0].innerHTML=optionsArr[0]);
+                    answers.append(btn[1].innerHTML=optionsArr[1]);
                 }
-            })
+
+                else
+                {
+                    answers.append(btn[0].innerHTML=optionsArr[0]);
+                    answers.append(btn[1].innerHTML=optionsArr[1]);
+                    answers.append(btn[2].innerHTML=optionsArr[2]);
+                    answers.append(btn[3].innerHTML=optionsArr[3]);
+                }
+            }
+            console.log(optionsArr);
         })
         
     }
-})
+});
 
 
 
