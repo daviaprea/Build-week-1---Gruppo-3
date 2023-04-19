@@ -37,29 +37,37 @@ proceedBtn.addEventListener('click', () => {
             }
 
             let optionsArr = []; //CREO ARRAY CON ARRAY DI OPZIONI
-            let cont=0;
-            for(d of domande) //GENERO L'ARRAY E PIAZZO I BOTTONI
-            {
-                let text=`${d.correct_answer},${d.incorrect_answers.toString()}`;
+            let cont = 0;
+
+            
+            while(cont < domande.length){
+                let text=`${domande[cont].correct_answer},${domande[cont].incorrect_answers.toString()}`;
                 let textArr=text.split(",");
                 optionsArr[cont]=[...textArr];
+
+                function checkAnswer(){
+                   answers.innerHTML= "" 
+                }
+
+                if (optionsArr[cont].length == 2){
+                    answers.append(btn[0].addEventListener("click", checkAnswer));
+                    answers.append(btn[1].addEventListener("click", checkAnswer));
+                    
+                }else{
+                    answers.append(btn[0].addEventListener("click", checkAnswer));
+                    answers.append(btn[1].addEventListener("click", checkAnswer));
+                    answers.append(btn[2].addEventListener("click", checkAnswer));
+                    answers.append(btn[3].addEventListener("click", checkAnswer));
+                    
+                }
+
                 cont++;
 
-                if(d.type == 'boolean')
-                {
-                    answers.append(btn[0].innerHTML=optionsArr[0]);
-                    answers.append(btn[1].innerHTML=optionsArr[1]);
-                }
-
-                else
-                {
-                    answers.append(btn[0].innerHTML=optionsArr[0]);
-                    answers.append(btn[1].innerHTML=optionsArr[1]);
-                    answers.append(btn[2].innerHTML=optionsArr[2]);
-                    answers.append(btn[3].innerHTML=optionsArr[3]);
-                }
+                console.log(optionsArr[cont]);
+                
             }
-            console.log(optionsArr);
+
+            
         })
         
     }
