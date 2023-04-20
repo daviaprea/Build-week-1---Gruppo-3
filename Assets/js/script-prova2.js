@@ -73,6 +73,7 @@ proceedBtn.addEventListener('click', () => {
 
                     qstTitle.innerHTML=domande[0].question;
                 }
+                qstCont.innerHTML=1;
             }
 
             else
@@ -85,6 +86,7 @@ proceedBtn.addEventListener('click', () => {
                     
                     qstTitle.innerHTML=domande[0].question;
                 }
+                qstCont.innerHTML=1;
             }
 
             //SETTAGGIO TIMER
@@ -111,7 +113,7 @@ proceedBtn.addEventListener('click', () => {
 
                 answers.innerHTML="";
                 cont++;
-                qstCont.innerHTML=cont;
+                qstCont.innerHTML=cont+1;
 
                 console.log(`Giuste: ${correct}; Sbagliate: ${wrong}`);
                 
