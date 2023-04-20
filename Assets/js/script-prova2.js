@@ -114,34 +114,48 @@ proceedBtn.addEventListener('click', () => {
                 qstCont.innerHTML=cont;
 
                 console.log(`Giuste: ${correct}; Sbagliate: ${wrong}`);
-
-                if(domande[cont].type == 'boolean')
+                
+                if(cont<10)
                 {
-                    for(let i=0; i<2; i++)
+                    if(domande[cont].type == 'boolean')
                     {
-                        btn[i].innerHTML="";
-                        let textnode = document.createTextNode(optionsArr[cont][i]);
-                        btn[i].appendChild(textnode);
-                        answers.append(btn[i]);
+                        for(let i=0; i<2; i++)
+                        {
+                            btn[i].innerHTML="";
+                            let textnode = document.createTextNode(optionsArr[cont][i]);
+                            btn[i].appendChild(textnode);
+                            answers.append(btn[i]);
 
-                        qstTitle.innerHTML=domande[cont].question;
+                            qstTitle.innerHTML=domande[cont].question;
+                        }
+                        progValue.innerHTML = 20;
                     }
-                    progValue.innerHTML = 20;
-                }
 
-                else
-                {
-                    for(let i=0; i<4; i++)
+                    else
                     {
-                        btn[i].innerHTML="";
-                        let textnode = document.createTextNode(optionsArr[cont][i]);
-                        btn[i].appendChild(textnode);
-                        answers.append(btn[i]);
+                        for(let i=0; i<4; i++)
+                        {
+                            btn[i].innerHTML="";
+                            let textnode = document.createTextNode(optionsArr[cont][i]);
+                            btn[i].appendChild(textnode);
+                            answers.append(btn[i]);
 
-                        qstTitle.innerHTML=domande[cont].question;
+                            qstTitle.innerHTML=domande[cont].question;
+                        }
+                        progValue.innerHTML = 20;
                     }
-                    progValue.innerHTML = 20;
                 }
+                else createResults();
+            }
+
+            function createResults()
+            {
+                clearInterval(prog);
+                mainBox.innerHTML = '';
+                document.getElementById("bp-timer-position").innerHTML="";
+                let rpTemp = document.getElementById('rp-template').content;
+                let rpHTML = document.importNode(rpTemp, true);
+                mainBox.appendChild(rpHTML);
             }
         });
     }
