@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Assets/css/reset.css">
+    <link rel="stylesheet" href="Assets/css/style.css">
+    <link rel="stylesheet" href="Assets/css/benchmark-page.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="content-h">
+            <img id="logo" src="Assets/img/epicode_logo.png" alt="Logo">
+        </div>
+        <div class="content" id="content">
+        </div>
+    </div>
+
+<!-- Template della welcome page-->
+
+    <template id="welcome-page">
+        <div class="content-text">
+            <h3>Welcome to <span>your exam</span></h3>
+            <h4>Instructions</h4>
+            <p>We don't expect most engineers to know the answers to all of these questions, so don't worry if you're unsure of a few of them.</p>
+
+            <ul>
+                <li>Each question is <span>timed</span> and can only <span>answered once.</span></li>
+                <li>Changing browser tab or opening other windows will <span>invalidate the question</span>.</li>
+                <li>This exam will take approx. <span>0-5 minutes</span>.</li>
+            </ul>
+
+            <div class="content-f">
+                <div class="check">
+                    <input type="checkbox" name="" id="check">
+                    <span>I promise to answer myself without help from anyone</span>
+                </div>
+                <button id="proceed">PROCEED</button>
+            </div>
+        </div>
+    </template>
+
+<!-- Template benchmarck page-->
+
+    <template id="bp-template">
+        <div class="bp-content-text">
+            <h3 id="question"></h3>
+            <div class="answers" id="answers">
+                
+            </div>
+            <p id="question-number">QUESTION <span id="q-number"></span><span class="pink">/10</span></p>
+        </div>
+    </template>
+    <script src="Assets/js/script-prova.js"></script>
+</body>
+</html>

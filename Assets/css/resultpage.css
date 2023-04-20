@@ -1,0 +1,61 @@
+.main-content {
+    text-align: center;
+}
+
+.main-content div{
+    display: inline-block;
+    width: 20vw;
+    margin-top: 10vh;
+}
+
+.main-content h3 {
+    margin-top: 5vh;
+}
+
+.main-content p {
+    font-size: 2.8em;
+}
+
+#correct {
+    text-align: left;
+}
+
+#correct p {
+    font-size: 4em;
+}
+
+#correct #c-number {
+    font-size: 2.8em;
+}
+
+#wrong {
+    text-align: right;
+}
+
+#wrong p {
+    font-size: 4rem;
+}
+
+#wrong #w-number {
+    font-size: 2.8rem;
+}
+
+.button-box {
+    margin-top: 10vh;
+    text-align: center;
+}
+
+.button-box button {
+    font-size: 2.8em;
+    padding: 15px;
+    padding-left: 85px;
+    padding-right: 85px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 4px solid white;
+    color: white;
+}
+
+.button-box button:hover {
+    cursor: pointer;
+}
+
