@@ -92,6 +92,7 @@ proceedBtn.addEventListener('click', () => {
                     let textnode = document.createTextNode(optionsArr[0][i]);
                     btn[i].appendChild(textnode);
                     answers.append(btn[i]);
+
                     qstTitle.innerHTML=domande[0].question;
                 }
             }
@@ -103,6 +104,7 @@ proceedBtn.addEventListener('click', () => {
                     let textnode = document.createTextNode(optionsArr[0][i]);
                     btn[i].appendChild(textnode);
                     answers.append(btn[i]);
+                    
                     qstTitle.innerHTML=domande[0].question;
                 }
             }
