@@ -73,7 +73,6 @@ proceedBtn.addEventListener('click', () => {
 
                     qstTitle.innerHTML=domande[0].question;
                 }
-                qstCont.innerHTML=1;
             }
 
             else
@@ -86,7 +85,6 @@ proceedBtn.addEventListener('click', () => {
                     
                     qstTitle.innerHTML=domande[0].question;
                 }
-                qstCont.innerHTML=1;
             }
 
             //SETTAGGIO TIMER
@@ -104,62 +102,47 @@ proceedBtn.addEventListener('click', () => {
 
             function btnHandler(b=true)
             {
-                cont++;
-                if(cont<optionsArr.length)
+                if(b==false)
                 {
-                    if (b == false)
-                    {
-                        wrong++;
-                        b = true;
-                        progValue.innerHTML = 20;
-                    }
-
-                    answers.innerHTML = "";
-                    qstCont.innerHTML = cont + 1;
-                    console.log(`Giuste: ${correct}; Sbagliate: ${wrong}`);
-
-                    if (domande[cont].type == 'boolean')
-                    {
-                        for (let i = 0; i < 2; i++)
-                        {
-                            btn[i].innerHTML = "";
-                            let textnode = document.createTextNode(optionsArr[cont][i]);
-                            btn[i].appendChild(textnode);
-                            answers.append(btn[i]);
-
-                            qstTitle.innerHTML = domande[cont].question;
-                        }
-                        progValue.innerHTML = 20;
-                    }
-
-                    else
-                    {
-                        for (let i = 0; i < 4; i++)
-                        {
-                            btn[i].innerHTML = "";
-                            let textnode = document.createTextNode(optionsArr[cont][i]);
-                            btn[i].appendChild(textnode);
-                            answers.append(btn[i]);
-
-                            qstTitle.innerHTML = domande[cont].question;
-                        }
-                        progValue.innerHTML = 20;
-                    }
+                    wrong++;
+                    b=true;
+                    progValue.innerHTML = 20;
                 }
 
-                else createResults();
-            }
+                answers.innerHTML="";
+                cont++;
+                qstCont.innerHTML=cont;
 
-            function createResults()
-            {
-                clearInterval(prog);
-                mainBox.innerHTML = '';
-                document.getElementById("bp-timer-position").innerHTML="";
-                let rpTemp = document.getElementById('rp-template').content;
-                let rpHTML = document.importNode(rpTemp, true);
-                mainBox.appendChild(rpHTML);
-            }
+                console.log(`Giuste: ${correct}; Sbagliate: ${wrong}`);
 
+                if(domande[cont].type == 'boolean')
+                {
+                    for(let i=0; i<2; i++)
+                    {
+                        btn[i].innerHTML="";
+                        let textnode = document.createTextNode(optionsArr[cont][i]);
+                        btn[i].appendChild(textnode);
+                        answers.append(btn[i]);
+
+                        qstTitle.innerHTML=domande[cont].question;
+                    }
+                    progValue.innerHTML = 20;
+                }
+
+                else
+                {
+                    for(let i=0; i<4; i++)
+                    {
+                        btn[i].innerHTML="";
+                        let textnode = document.createTextNode(optionsArr[cont][i]);
+                        btn[i].appendChild(textnode);
+                        answers.append(btn[i]);
+
+                        qstTitle.innerHTML=domande[cont].question;
+                    }
+                    progValue.innerHTML = 20;
+                }
+            }
         });
     }
 });

@@ -1,34 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="Assets/css/reset.css">
     <link rel="stylesheet" href="Assets/css/style.css">
     <link rel="stylesheet" href="Assets/css/benchmark-page.css">
+    <link rel="stylesheet" href="Assets/css/prova-timer-svg.css">
+    <link rel="stylesheet" href="Assets/css/resultpage.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
+
 <body>
 
     <div class="container">
-        <div class="content-h">
+        <div class="content-h" id="content-h">
             <img id="logo" src="Assets/img/epicode_logo.png" alt="Logo">
         </div>
         <div class="content" id="content">
         </div>
     </div>
 
-<!-- Template della welcome page-->
+    <!-- Template della welcome page-->
 
     <template id="welcome-page">
         <div class="content-text">
             <h3>Welcome to <span>your exam</span></h3>
             <h4>Instructions</h4>
-            <p>We don't expect most engineers to know the answers to all of these questions, so don't worry if you're unsure of a few of them.</p>
+            <p>We don't expect most engineers to know the answers to all of these questions, so don't worry if you're
+                unsure of a few of them.</p>
 
             <ul>
                 <li>Each question is <span>timed</span> and can only <span>answered once.</span></li>
@@ -46,17 +53,58 @@
         </div>
     </template>
 
-<!-- Template benchmarck page-->
+    <!-- Template benchmark page-->
 
     <template id="bp-template">
         <div class="bp-content-text">
             <h3 id="question"></h3>
             <div class="answers" id="answers">
-                
+
             </div>
             <p id="question-number">QUESTION <span id="q-number"></span><span class="pink">/10</span></p>
         </div>
     </template>
-    <script src="Assets/js/script-prova.js"></script>
+
+    <!-- Template benchmark timer page-->
+
+    <template id="bp-timer">
+        <div class="bp-timer-position" id="bp-timer-position">
+            <svg>
+                <circle id="f-circle" cx="3rem" cy="3rem" r="40" fill="transparent" />
+                <circle id="s-circle" cx="3rem" cy="3rem" r="40" fill="transparent" />
+                <text class="timer-text" x="50%" y="25%" text-anchor="middle" font-size="1.5rem"
+                    dy="0.5rem">SECONDS</text>
+                <text id="seconds" x="50%" y="50%" text-anchor="middle" font-size="1.8rem" dy="0.5rem">20</text>
+                <text class="timer-text" x="50%" y="65%" text-anchor="middle" font-size="1.5rem"
+                    dy="0.5rem">REMAINING</text>
+            </svg>
+        </div>
+    </template>
+
+    <!-- Template results page-->
+
+    <template id="rp-template">
+        <h3><span>Results</span></h3>
+        <p>The summary of your answers:</p>
+        <div id="correct">
+            <p>Correct</p>
+            <p id="c-percent"><span>66.7%</span></p>
+            <p id="c-number">4/6 question</p>
+        </div>
+        <div id="chart">
+            <canvas id="myChart"></canvas>
+        </div>
+        <div id="wrong">
+            <p>Wrong</p>
+            <p id="w-percent"><span>33.3%</span></p>
+            <p id="w-number">2/6 question</p>
+        </div>
+        <div class="button-box">
+            <button><span>RATE US</span></button>
+        </div>
+    </template>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="Assets/js/script-prova2.js"></script>
 </body>
 </html>
