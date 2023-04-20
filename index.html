@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="Assets/css/reset.css">
     <link rel="stylesheet" href="Assets/css/style.css">
     <link rel="stylesheet" href="Assets/css/benchmark-page.css">
+    <link rel="stylesheet" href="Assets/css/prova-timer-svg.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
@@ -15,7 +18,7 @@
 <body>
 
     <div class="container">
-        <div class="content-h">
+        <div class="content-h" id="content-h">
             <img id="logo" src="Assets/img/epicode_logo.png" alt="Logo">
         </div>
         <div class="content" id="content">
@@ -46,7 +49,7 @@
         </div>
     </template>
 
-<!-- Template benchmarck page-->
+<!-- Template benchmark page-->
 
     <template id="bp-template">
         <div class="bp-content-text">
@@ -55,6 +58,20 @@
                 
             </div>
             <p id="question-number">QUESTION <span id="q-number"></span><span class="pink">/10</span></p>
+        </div>
+    </template>
+
+<!-- Template benchmark timer page-->
+
+    <template id="bp-timer">
+        <div class="bp-timer-position">
+            <svg>
+                <circle id="f-circle" cx="3rem" cy="3rem" r="40" fill="transparent"/>
+                <circle id="s-circle" cx="3rem" cy="3rem" r="40" fill="transparent"/>
+                <text class="timer-text" x="50%" y="25%" text-anchor="middle" font-size="1.5rem" dy="0.5rem">SECONDS</text>
+                <text id="seconds" x="50%" y="50%" text-anchor="middle" font-size="1.8rem" dy="0.5rem">20</text>
+                <text class="timer-text" x="50%" y="65%" text-anchor="middle" font-size="1.5rem" dy="0.5rem">REMAINING</text>
+            </svg>
         </div>
     </template>
     <script src="Assets/js/script-prova.js"></script>

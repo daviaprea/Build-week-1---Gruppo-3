@@ -1,16 +1,22 @@
 let wpTemplate = document.getElementById('welcome-page').content;
 let wpHTML = document.importNode(wpTemplate, true);
-let mainBox = document.getElementById('content')
+
+let mainBox = document.getElementById('content');
+let headBox = document.getElementById('content-h');
+
 
 // aggiungo template welcome page
 
 mainBox.appendChild(wpHTML);
 
-let proceedBtn = document.getElementById('proceed')
+let proceedBtn = document.getElementById('proceed');
 let check = document.getElementById ('check');
 
 let bpTemplate = document.getElementById('bp-template').content;
 let bpHTML = document.importNode(bpTemplate, true);
+
+let bpTimer = document.getElementById('bp-timer').content;
+let bpTimerHTML = document.importNode(bpTimer, true);
 
 // aggiungo template benchmark page
 
@@ -23,6 +29,7 @@ proceedBtn.addEventListener('click', () => {
             domande = res.results;
 
             mainBox.appendChild(bpHTML);
+            headBox.appendChild(bpTimerHTML);
             
             let qstTitle = document.getElementById('question');
             let answers = document.getElementById('answers');
@@ -50,38 +57,8 @@ proceedBtn.addEventListener('click', () => {
             {
                 btn[i]=document.createElement('button');
                 btn[i].addEventListener("click", ()=>{
-
                     btn[i].innerHTML==domande[cont].correct_answer ? correct++ : wrong++;
-                    console.log(`Giuste: ${correct}; Sbagliate: ${wrong}`);
-
-                    answers.innerHTML="";
-                    cont++;
-                    qstCont.innerHTML=cont;
-                    if(domande[cont].type == 'boolean')
-                    {
-                        for(let i=0; i<2; i++)
-                        {
-                            btn[i].innerHTML="";
-                            let textnode = document.createTextNode(optionsArr[cont][i]);
-                            btn[i].appendChild(textnode);
-                            answers.append(btn[i]);
-
-                            qstTitle.innerHTML=domande[cont].question;
-                        }
-                    }
-
-                    else
-                    {
-                        for(let i=0; i<4; i++)
-                        {
-                            btn[i].innerHTML="";
-                            let textnode = document.createTextNode(optionsArr[cont][i]);
-                            btn[i].appendChild(textnode);
-                            answers.append(btn[i]);
-
-                            qstTitle.innerHTML=domande[cont].question;
-                        }
-                    }
+                    btnHandler();
                 });
             }
 
@@ -106,6 +83,63 @@ proceedBtn.addEventListener('click', () => {
                     answers.append(btn[i]);
                     
                     qstTitle.innerHTML=domande[0].question;
+                }
+            }
+
+            //SETTAGGIO TIMER
+            let progValue = document.getElementById("seconds");
+            progValue.innerHTML = 5;
+            progBar = Number(progValue.innerHTML);
+
+            let prog = setInterval(() => {
+
+                progValue.innerHTML = Number(progValue.innerHTML) - 1;
+
+                if(progValue.innerHTML == "0") btnHandler(false);
+
+            }, 1000);
+
+            function btnHandler(b=true)
+            {
+                if(b==false)
+                {
+                    wrong++;
+                    b=true;
+                    progValue.innerHTML = 5;
+                }
+
+                answers.innerHTML="";
+                cont++;
+                qstCont.innerHTML=cont;
+
+                console.log(`Giuste: ${correct}; Sbagliate: ${wrong}`);
+
+                if(domande[cont].type == 'boolean')
+                {
+                    for(let i=0; i<2; i++)
+                    {
+                        btn[i].innerHTML="";
+                        let textnode = document.createTextNode(optionsArr[cont][i]);
+                        btn[i].appendChild(textnode);
+                        answers.append(btn[i]);
+
+                        qstTitle.innerHTML=domande[cont].question;
+                    }
+                    progValue.innerHTML = 5;
+                }
+
+                else
+                {
+                    for(let i=0; i<4; i++)
+                    {
+                        btn[i].innerHTML="";
+                        let textnode = document.createTextNode(optionsArr[cont][i]);
+                        btn[i].appendChild(textnode);
+                        answers.append(btn[i]);
+
+                        qstTitle.innerHTML=domande[cont].question;
+                    }
+                    progValue.innerHTML = 5;
                 }
             }
         });

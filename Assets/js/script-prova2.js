@@ -1,16 +1,22 @@
 let wpTemplate = document.getElementById('welcome-page').content;
 let wpHTML = document.importNode(wpTemplate, true);
-let mainBox = document.getElementById('content')
+
+let mainBox = document.getElementById('content');
+let headBox = document.getElementById('content-h');
+
 
 // aggiungo template welcome page
 
 mainBox.appendChild(wpHTML);
 
-let proceedBtn = document.getElementById('proceed')
+let proceedBtn = document.getElementById('proceed');
 let check = document.getElementById ('check');
 
 let bpTemplate = document.getElementById('bp-template').content;
 let bpHTML = document.importNode(bpTemplate, true);
+
+let bpTimer = document.getElementById('bp-timer').content;
+let bpTimerHTML = document.importNode(bpTimer, true);
 
 // aggiungo template benchmark page
 
@@ -23,6 +29,7 @@ proceedBtn.addEventListener('click', () => {
             domande = res.results;
 
             mainBox.appendChild(bpHTML);
+            headBox.appendChild(bpTimerHTML);
             
             let qstTitle = document.getElementById('question');
             let answers = document.getElementById('answers');
@@ -92,6 +99,7 @@ proceedBtn.addEventListener('click', () => {
                     let textnode = document.createTextNode(optionsArr[0][i]);
                     btn[i].appendChild(textnode);
                     answers.append(btn[i]);
+
                     qstTitle.innerHTML=domande[0].question;
                 }
             }
@@ -103,6 +111,7 @@ proceedBtn.addEventListener('click', () => {
                     let textnode = document.createTextNode(optionsArr[0][i]);
                     btn[i].appendChild(textnode);
                     answers.append(btn[i]);
+                    
                     qstTitle.innerHTML=domande[0].question;
                 }
             }
