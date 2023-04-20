@@ -1,19 +1,16 @@
 .container{
-    height: 100vh;
     background-image: url("../img/bg.jpg");
     background-size: cover;
     background-position: center;
     font-family: 'Jost', sans-serif;
     color: white;
-    padding: 0 30vh 0 30vh;
+    width: 50%;
+    margin: 0 auto;
+    padding: 5vh;
 }
 
 .content{
     margin-top: 30px;
-}
-
-.content-h {
-    padding-top: 10vh;
 }
 
 #logo{
@@ -23,7 +20,7 @@
 h3{
     font-size: 6em;
     margin-bottom: 15px;
-    margin-top: 15vh;
+    margin-top: 5vh;
 }
 
 h4{

@@ -15,6 +15,9 @@ new Chart("myChart", {
             borderColor: "transparent",
         }]
     },
+    options: {
+        cutoutPercentage: 70
+    }
 });
 
 console.dir(myChart)
