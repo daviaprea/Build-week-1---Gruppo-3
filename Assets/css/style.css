@@ -4,8 +4,7 @@
     background-size: cover;
     font-family: 'Jost', sans-serif;
     color: white;
-    padding-left: 15vw;
-    padding-right: 15vw;
+    padding: 0 30vh 0 30vh;
 }
 
 .content-text{
