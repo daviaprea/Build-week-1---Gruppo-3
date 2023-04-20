@@ -43,7 +43,8 @@ proceedBtn.addEventListener('click', () => {
             {
                 let text=`${d.correct_answer},${d.incorrect_answers.toString()}`;
                 let textArr=text.split(",");
-                optionsArr[i]=[...textArr];
+                let shuffledArray = textArr.sort((a, b) => 0.5 - Math.random());
+                optionsArr[i]=[...shuffledArray];
                 i++;
             }
             console.log(optionsArr);
@@ -88,7 +89,7 @@ proceedBtn.addEventListener('click', () => {
 
             //SETTAGGIO TIMER
             let progValue = document.getElementById("seconds");
-            progValue.innerHTML = 5;
+            progValue.innerHTML = 20;
             progBar = Number(progValue.innerHTML);
 
             let prog = setInterval(() => {
@@ -105,7 +106,7 @@ proceedBtn.addEventListener('click', () => {
                 {
                     wrong++;
                     b=true;
-                    progValue.innerHTML = 5;
+                    progValue.innerHTML = 20;
                 }
 
                 answers.innerHTML="";
@@ -125,7 +126,7 @@ proceedBtn.addEventListener('click', () => {
 
                         qstTitle.innerHTML=domande[cont].question;
                     }
-                    progValue.innerHTML = 5;
+                    progValue.innerHTML = 20;
                 }
 
                 else
@@ -139,7 +140,7 @@ proceedBtn.addEventListener('click', () => {
 
                         qstTitle.innerHTML=domande[cont].question;
                     }
-                    progValue.innerHTML = 5;
+                    progValue.innerHTML = 20;
                 }
             }
         });
