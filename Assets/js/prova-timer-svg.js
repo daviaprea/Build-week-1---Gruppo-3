@@ -1,5 +1,5 @@
 let circularProgress=document.querySelector("circle");
-let progValue=document.querySelector("text");
+let progValue=document.getElementById("seconds");
 progValue.innerHTML=20;
 progBar=Number(progValue.innerHTML);
 let cont=0;
