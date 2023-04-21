@@ -50,8 +50,8 @@ proceedBtn.addEventListener('click', () => {
             console.log(optionsArr);
 
             let btn = []; //CREO BOTTONI
-            let cont=0;
-            let correct=0;
+            var cont=0;
+            var correct=0;
             let wrong=0;
             
 
@@ -91,6 +91,7 @@ proceedBtn.addEventListener('click', () => {
             }
 
             //SETTAGGIO TIMER
+            let timerCircle=document.getElementById("f-circle");
             let progValue = document.getElementById("seconds");
             progValue.innerHTML = 20;
             progBar = Number(progValue.innerHTML);
@@ -110,6 +111,8 @@ proceedBtn.addEventListener('click', () => {
                     wrong++;
                     b=true;
                     progValue.innerHTML = 20;
+                    
+                    
                 }
 
                 answers.innerHTML="";
@@ -132,6 +135,7 @@ proceedBtn.addEventListener('click', () => {
                             qstTitle.innerHTML=domande[cont].question;
                         }
                         progValue.innerHTML = 20;
+
                     }
 
                     else
@@ -146,12 +150,13 @@ proceedBtn.addEventListener('click', () => {
                             qstTitle.innerHTML=domande[cont].question;
                         }
                         progValue.innerHTML = 20;
+
                     }
                 }
-                else createResults();
+                else createResults(wrong*10, correct*10);
             }
 
-            function createResults()
+            function createResults(w, c)
             {
                 clearInterval(prog);
                 mainBox.innerHTML = '';
@@ -177,11 +182,12 @@ proceedBtn.addEventListener('click', () => {
                 cNum.style.display = 'inline'
                 wNum.innerHTML = wrong;
                 wNum.style.display = 'inline'
-
-                
-
-                console.log(correctScore, wrongScore)
-            }
+                document.getElementById("rate-button").addEventListener("click", ()=>{
+                    mainBox.innerHTML = '';
+                    let fbTemp = document.getElementById('fb-template').content;
+                    let fbHTML = document.importNode(fbTemp, true);
+                    mainBox.appendChild(fbHTML);
+                });
         });
     }
 });
