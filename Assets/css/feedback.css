@@ -46,3 +46,16 @@
     color: #c2128d;
    
 }
+
+input {
+    width: 80%;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid fuchsia;
+    padding: 10px 40px;
+    margin-bottom: 70px;
+}
+
+.content-textt {
+    text-align: center;
+}
