@@ -5,12 +5,12 @@
    
 }
 
-
 .bp-content-text{
     text-align: center;
 }
 
-h3{
+#question{
+    margin-top: 15vh;
     font-size: 4em;
 }
 
@@ -21,7 +21,7 @@ h3{
 }
 
 .answers button{
-    margin: 20px;
+    margin: 15px 0;
     font-weight: 1.5em;
     border-radius: 40px;
     height: 60px;
@@ -40,8 +40,6 @@ h3{
     cursor: pointer;
     background-color: #c2128d;
 }
-
-
 
 #timer{
     width: 100px;
@@ -71,14 +69,3 @@ h3{
 #question-number {
     margin-top: 15vh;
 }
-
-
-
-
-
-
-
-
-
-
-

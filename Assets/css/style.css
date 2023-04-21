@@ -6,7 +6,7 @@
     color: white;
     width: 50%;
     margin: 0 auto;
-    padding: 5vh;
+    padding: 5vh 10vh 15vh 10vh;
 }
 
 .content{
@@ -17,10 +17,11 @@
     height: 5vh;
 }
 
-h3{
+#wp-title{
     font-size: 6em;
-    margin-bottom: 15px;
-    margin-top: 5vh;
+    margin-bottom: 50px;
+    margin-top: 8vh;
+    line-height: 0.7;
 }
 
 h4{
@@ -73,7 +74,19 @@ span{
 }
 
 .check {
-    display: inline;
+    display: flex;
+    align-items: center;
+}
+
+#check{
+    appearance: none;
+    height: 20px;
+    width: 20px;
+    background-color: transparent;
+    border: 2px solid white;
+    cursor: pointer;
+    margin-right: 15px;
+    box-sizing: border-box;
 }
 
 #chart {
