@@ -8,13 +8,15 @@ var barColors = [
 new Chart("myChart", {
     type: "doughnut",
     data: {
-        labels: xValues,
         datasets: [{
             backgroundColor: barColors,
             data: yValues,
             borderColor: "transparent",
         }]
     },
+    options: {
+        cutoutPercentage: 70
+    }
 });
 
 console.dir(myChart)
