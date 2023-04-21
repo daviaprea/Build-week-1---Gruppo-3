@@ -181,6 +181,13 @@ proceedBtn.addEventListener('click', () => {
                 cNum.style.display = 'inline'
                 wNum.innerHTML = wrong;
                 wNum.style.display = 'inline'
+
+                document.getElementById("rate-button").addEventListener("click", ()=>{
+                    mainBox.innerHTML = '';
+                    let fbTemp = document.getElementById('fb-template').content;
+                    let fbHTML = document.importNode(fbTemp, true);
+                    mainBox.appendChild(fbHTML);
+                });
             }
         });
     }
