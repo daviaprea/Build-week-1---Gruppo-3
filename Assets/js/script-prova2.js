@@ -90,6 +90,7 @@ proceedBtn.addEventListener('click', () => {
             }
 
             //SETTAGGIO TIMER
+            let timerCircle=document.getElementById("f-circle");
             let progValue = document.getElementById("seconds");
             progValue.innerHTML = 20;
             progBar = Number(progValue.innerHTML);
@@ -109,6 +110,9 @@ proceedBtn.addEventListener('click', () => {
                     wrong++;
                     b=true;
                     progValue.innerHTML = 20;
+                    
+                    headBox.removeChild(bpTimerHTML)
+                    headBox.appendChild(bpTimerHTML);
                 }
 
                 answers.innerHTML="";
@@ -131,6 +135,10 @@ proceedBtn.addEventListener('click', () => {
                             qstTitle.innerHTML=domande[cont].question;
                         }
                         progValue.innerHTML = 20;
+
+                        headBox.removeChild(bpTimerHTML);
+                        headBox.appendChild(bpTimerHTML);
+
                     }
 
                     else
@@ -145,6 +153,9 @@ proceedBtn.addEventListener('click', () => {
                             qstTitle.innerHTML=domande[cont].question;
                         }
                         progValue.innerHTML = 20;
+
+                        headBox.removeChild(bpTimerHTML);
+                        headBox.appendChild(bpTimerHTML);
                     }
                 }
                 else createResults();

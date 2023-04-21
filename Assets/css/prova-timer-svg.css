@@ -8,6 +8,9 @@ svg{
     stroke-width: 8px;
     stroke-dasharray: 251;
     stroke-dashoffset: 251;
+}
+
+.animation{
     animation: anim 20s linear forwards;
 }
 
