@@ -93,10 +93,15 @@ span{
 }
 
 #check::after{
-    content: "\f00c";
+    content: "\2713";
     color: white;
     font-family: 'Jost', sans-serif;
     font-size: 20px;
+    display: none;
+}
+
+#check:checked::after{
+    display: block;
 }
 
 #chart {
