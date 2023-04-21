@@ -108,9 +108,37 @@
         </div>
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <script>
+
+            a = window.wrongScore;
+            b = window.correctScore;
+    
+            console.log(a, b);
+    
+            let xValues = ['wrong', 'correct'];
+                let yValues = [a, b];
+                let barColors = [
+                    "#c2128d",
+                    "#00ffff",    
+                ];
+    
+                
+                new Chart("myChart", {
+                    type: "doughnut",
+                    data: {
+                        datasets: [{
+                            backgroundColor: barColors,
+                            data: yValues,
+                            borderColor: "transparent",
+                        }]
+                    },
+                    options: {
+                        cutoutPercentage: 70
+                    }
+                });
+        </script>
     </template>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="Assets/js/script-prova2.js"></script>
 </body>
 </html>
