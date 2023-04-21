@@ -162,29 +162,25 @@ proceedBtn.addEventListener('click', () => {
                 document.getElementById("bp-timer-position").innerHTML="";
                 let rpTemp = document.getElementById('rp-template').content;
                 let rpHTML = document.importNode(rpTemp, true);
+                let correctScore = correct * 10;
+                let wrongScore = wrong * 10;
 
-                let charData={
-                    labels:["Wrong", "Correct"],
-                    data: [w, c]
-                }
+                console.log(correct, wrong)
 
-                let chart=document.querySelector("#myChart").getContext('2d');
-
-                new Chart(chart, {
-
-                    type: "doughnut",
-                    data:{
-                        labels: charData.labels,
-                        datasets: [
-                            {
-                                label: "Wrong",
-                                data: charData.data
-                            }
-                        ]
-                    }
-                });
-
+                window.correctScore = correctScore;
+                window.wrongScore = wrongScore;
                 mainBox.appendChild(rpHTML);
+
+                document.querySelector('#c-percent span').innerHTML = `${correctScore}%`;
+                document.querySelector('#w-percent span').innerHTML = `${wrongScore}%`;
+
+                let cNum = document.getElementById('c-number');
+                let wNum = document.getElementById('w-number');
+
+                cNum.innerHTML = correct;
+                cNum.style.display = 'inline'
+                wNum.innerHTML = wrong;
+                wNum.style.display = 'inline'
             }
         });
     }
