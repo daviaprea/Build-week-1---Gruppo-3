@@ -90,26 +90,56 @@
         <div id="rp-main">
             <div id="correct">
                 <p>Correct</p>
-                <p id="c-percent"><span>66.7%</span></p>
-                <p id="c-number">4/6 question</p>
+                <p id="c-percent"><span></span></p>
+                <p><p id="c-number"></p>/10 question</p>
             </div>
             <div id="chart-container">
                 <canvas id="myChart"></canvas>
             </div>
             <div id="wrong">
                 <p>Wrong</p>
-                <p id="w-percent"><span>33.3%</span></p>
-                <p id="w-number">2/6 question</p>
+                <p id="w-percent"><span></span></p>
+                <p><p id="w-number"></p>/10 question</p>
             </div>
         </div>
         <div class="button-box">
             <button><span>RATE US</span></button>
         </div>
+        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-        <script src="Assets/js/result-chart.js"></script>
+    <script>
+
+        a = window.wrongScore;
+        b = window.correctScore;
+
+        console.log(a, b);
+
+        let xValues = ['wrong', 'correct'];
+            let yValues = [a, b];
+            let barColors = [
+                "#c2128d",
+                "#00ffff",    
+            ];
+
+            
+            new Chart("myChart", {
+                type: "doughnut",
+                data: {
+                    datasets: [{
+                        backgroundColor: barColors,
+                        data: yValues,
+                        borderColor: "transparent",
+                    }]
+                },
+                options: {
+                    cutoutPercentage: 70
+                }
+            });
+    </script>
     </template>
 
     <script src="Assets/js/script-prova2.js"></script>
+    
     
 </body>
 </html>

@@ -53,9 +53,7 @@ proceedBtn.addEventListener('click', () => {
             let cont=0;
             let correct=0;
             let wrong=0;
-
-            let correctScore = correct * 10;
-            let wrongScore = wrong * 10;
+            
 
             for (let i = 0; i < 4; i++)
             {
@@ -160,7 +158,29 @@ proceedBtn.addEventListener('click', () => {
                 document.getElementById("bp-timer-position").innerHTML="";
                 let rpTemp = document.getElementById('rp-template').content;
                 let rpHTML = document.importNode(rpTemp, true);
+                let correctScore = correct * 10;
+                let wrongScore = wrong * 10;
+
+                console.log(correct, wrong)
+
+                window.correctScore = correctScore;
+                window.wrongScore = wrongScore;
                 mainBox.appendChild(rpHTML);
+
+                document.querySelector('#c-percent span').innerHTML = `${correctScore}%`;
+                document.querySelector('#w-percent span').innerHTML = `${wrongScore}%`;
+
+                let cNum = document.getElementById('c-number');
+                let wNum = document.getElementById('w-number');
+
+                cNum.innerHTML = correct;
+                cNum.style.display = 'inline'
+                wNum.innerHTML = wrong;
+                wNum.style.display = 'inline'
+
+                
+
+                console.log(correctScore, wrongScore)
             }
         });
     }
