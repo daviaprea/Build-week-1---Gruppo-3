@@ -11,11 +11,12 @@
     <link rel="stylesheet" href="Assets/css/benchmark-page.css">
     <link rel="stylesheet" href="Assets/css/prova-timer-svg.css">
     <link rel="stylesheet" href="Assets/css/resultpage.css">
-    <link rel="stylesheet" href="Assets/css/font-awesome.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
+    
+    <title>Quiz</title>
     
 </head>
 
@@ -85,27 +86,31 @@
     <!-- Template results page-->
 
     <template id="rp-template">
-        <h3><span>Results</span></h3>
-        <p>The summary of your answers:</p>
-        <div id="correct">
-            <p>Correct</p>
-            <p id="c-percent"><span>66.7%</span></p>
-            <p id="c-number">4/6 question</p>
-        </div>
-        <div id="chart">
-            <canvas id="myChart"></canvas>
-        </div>
-        <div id="wrong">
-            <p>Wrong</p>
-            <p id="w-percent"><span>33.3%</span></p>
-            <p id="w-number">2/6 question</p>
+        <h3 id="rp-title"><span>Results</span></h3>
+            <p id="rp-sub">The summary of your answers:</p>
+        <div id="rp-main">
+            <div id="correct">
+                <p>Correct</p>
+                <p id="c-percent"><span>66.7%</span></p>
+                <p id="c-number">4/6 question</p>
+            </div>
+            <div id="chart-container">
+                <canvas id="myChart"></canvas>
+            </div>
+            <div id="wrong">
+                <p>Wrong</p>
+                <p id="w-percent"><span>33.3%</span></p>
+                <p id="w-number">2/6 question</p>
+            </div>
         </div>
         <div class="button-box">
             <button><span>RATE US</span></button>
         </div>
+        
+        <!-- <script src="Assets/js/result-chart.js"></script> -->
     </template>
 
-    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="Assets/js/script-prova2.js"></script>
 </body>
 </html>

@@ -50,8 +50,8 @@ proceedBtn.addEventListener('click', () => {
             console.log(optionsArr);
 
             let btn = []; //CREO BOTTONI
-            let cont=0;
-            let correct=0;
+            var cont=0;
+            var correct=0;
             let wrong=0;
 
             for (let i = 0; i < 4; i++)
@@ -111,8 +111,7 @@ proceedBtn.addEventListener('click', () => {
                     b=true;
                     progValue.innerHTML = 20;
                     
-                    headBox.removeChild(bpTimerHTML)
-                    headBox.appendChild(bpTimerHTML);
+                    
                 }
 
                 answers.innerHTML="";
@@ -136,9 +135,6 @@ proceedBtn.addEventListener('click', () => {
                         }
                         progValue.innerHTML = 20;
 
-                        headBox.removeChild(bpTimerHTML);
-                        headBox.appendChild(bpTimerHTML);
-
                     }
 
                     else
@@ -154,20 +150,40 @@ proceedBtn.addEventListener('click', () => {
                         }
                         progValue.innerHTML = 20;
 
-                        headBox.removeChild(bpTimerHTML);
-                        headBox.appendChild(bpTimerHTML);
                     }
                 }
-                else createResults();
+                else createResults(wrong*10, correct*10);
             }
 
-            function createResults()
+            function createResults(w, c)
             {
                 clearInterval(prog);
                 mainBox.innerHTML = '';
                 document.getElementById("bp-timer-position").innerHTML="";
                 let rpTemp = document.getElementById('rp-template').content;
                 let rpHTML = document.importNode(rpTemp, true);
+
+                let charData={
+                    labels:["Wrong", "Correct"],
+                    data: [w, c]
+                }
+
+                let chart=document.querySelector("#myChart").getContext('2d');
+
+                new Chart(chart, {
+
+                    type: "doughnut",
+                    data:{
+                        labels: charData.labels,
+                        datasets: [
+                            {
+                                label: "Wrong",
+                                data: charData.data
+                            }
+                        ]
+                    }
+                });
+
                 mainBox.appendChild(rpHTML);
             }
         });

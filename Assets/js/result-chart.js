@@ -1,5 +1,5 @@
 var xValues = ['wrong', 'correct'];
-var yValues = [33, 67];
+var yValues = [w, c];
 var barColors = [
     "#c2128d",
     "#00ffff",    
@@ -20,4 +20,3 @@ new Chart("myChart", {
 });
 
 console.dir(myChart)
-
