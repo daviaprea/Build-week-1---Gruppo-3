@@ -54,6 +54,9 @@ proceedBtn.addEventListener('click', () => {
             let correct=0;
             let wrong=0;
 
+            let correctScore = correct * 10;
+            let wrongScore = wrong * 10;
+
             for (let i = 0; i < 4; i++)
             {
                 btn[i]=document.createElement('button');

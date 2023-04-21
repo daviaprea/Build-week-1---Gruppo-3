@@ -1,6 +1,6 @@
-var xValues = ['wrong', 'correct'];
-var yValues = [33, 67];
-var barColors = [
+let xValues = ['wrong', 'correct'];
+let yValues = [33, 67];
+let barColors = [
     "#c2128d",
     "#00ffff",    
 ];
@@ -18,6 +18,4 @@ new Chart("myChart", {
         cutoutPercentage: 70
     }
 });
-
-console.dir(myChart)
 
