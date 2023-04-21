@@ -1,40 +1,8 @@
-.container{
-    height: 110vh;
-    background-image: url("../img/bg.jpg");
-    background-size: cover;
-    background-position: center;
-    font-family: 'Jost', sans-serif;
-    color: white;
-   
-    
-}
-.content{
-    text-align: center;
-}
-
-.content-h {
-    padding-top: 10vh;
-}
-
-#logo{
-    height: 5vh;
-}
-
-h3{
-    font-size: 4em;
-    font-weight: bold;
-    margin-bottom: 0.5em;
-   
-}
-p{
-    font-size: 2em;
-}
-
-.rate { margin-right: 15rem;
+.rate { 
+    margin-right: 15rem;
   margin-left: -2rem;
    margin-bottom: 15%;
    margin-top: 3%;
-  
 }
 .rate:not(:checked) > input {
     position:absolute;
@@ -78,23 +46,12 @@ p{
     color: #c2128d;
    
 }
-.button{border-radius: 0;
-    padding: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-size: 1.5em;
-    font-weight: bold;
-    background-color: #00FFFF;
-    border: 0;
-    color: #0b133d;
-    box-shadow:#00ffff 2px 2px  15px;}
-    
-    .content-f {
-        
-       display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-left: 40%;
-        margin-top:5%;
-    }
-    
+
+#fb-text{
+    width: 80%;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid fuchsia;
+    padding: 10px 40px;
+    margin-bottom: 70px;
+}

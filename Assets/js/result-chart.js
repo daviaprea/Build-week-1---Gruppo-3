@@ -1,6 +1,8 @@
-let xValues = ['wrong', 'correct'];
-let yValues = [33, 67];
-let barColors = [
+
+var xValues = ['wrong', 'correct'];
+var yValues = [w, c];
+var barColors = [
+>>>>>>> origin/Branch-Davide
     "#c2128d",
     "#00ffff",    
 ];
@@ -19,3 +21,4 @@ new Chart("myChart", {
     }
 });
 
+console.dir(myChart)
