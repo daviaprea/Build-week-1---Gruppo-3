@@ -188,6 +188,6 @@ proceedBtn.addEventListener('click', () => {
                     let fbHTML = document.importNode(fbTemp, true);
                     mainBox.appendChild(fbHTML);
                 });
-        });
+        }});
     }
 });
