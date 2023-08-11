@@ -39,6 +39,7 @@
 }
 
 #wrong p {
+<<<<<<< HEAD
     font-size: 3em;
 }
 
@@ -49,6 +50,13 @@
 
 #wrong #w-number {
     font-size: 1.5em;
+=======
+    font-size: 4rem;
+}
+
+#wrong #w-number {
+    font-size: 2.8rem;
+>>>>>>> origin/branch-Vincenzo
 }
 
 .button-box {
@@ -68,10 +76,19 @@
 .button-box button:hover {
     cursor: pointer;
 }
+<<<<<<< HEAD
+=======
 
+<<<<<<< HEAD
 #chart-container {
     width: 600px;
     height: 360px;
     display: flex;
     justify-content: center;
 }
+=======
+#chart{
+    width: 1000px;
+}
+>>>>>>> origin/Branch-Davide
+>>>>>>> origin/branch-Vincenzo

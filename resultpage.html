@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Assets/css/reset.css">
+    <link rel="stylesheet" href="Assets/css/style.css">
+    <link rel="stylesheet" href="Assets/css/resultpage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="content-h">
+            <img id="logo" src="Assets/img/epicode_logo.png" alt="Logo">
+
+            <div id="timer"></div>
+        </div>
+        <div class="main-content">
+            <h3><span>Results</span></h3>
+            <p>The summary of your answers:</p>
+            <div id="correct">
+                <p>Correct</p>
+                <p id="c-percent"><span>66.7%</span></p>
+                <p id="c-number">4/6 question</p>
+            </div>
+            <div id="chart">
+                <canvas id="myChart"></canvas>
+            </div>
+            <div id="wrong">
+                <p>Wrong</p>
+                <p id="w-percent"><span>33.3%</span></p>
+                <p id="w-number">2/6 question</p>
+            </div>
+        </div>
+        <div class="button-box">
+            <button><span>RATE US</span></button>
+        </div>
+
+    </div>
+
+      
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            datasets: [{
+            data: [33, 67],
+            borderWidth: 0,            
+            }]
+        },
+
+
+    })
+
+        console.dir(ctx)
+    </script> 
+</body>
+</html>
