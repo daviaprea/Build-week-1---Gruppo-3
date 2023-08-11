@@ -28,7 +28,7 @@ svg text{
 }
 
 @keyframes anim{
-    100%{
+     100%{
         stroke-dashoffset: 0;
     }
 }
